@@ -684,6 +684,11 @@ public class Zendesk implements Closeable {
                 handleList(UserField.class, "user_fields")));
     }
 
+    public Field createUserField(UserField field) {
+        return complete(submit(req("POST", cnst("/user_fields.json"), JSON, json(
+                Collections.singletonMap("user_field", field))), handle(UserField.class, "user_field")));
+    }
+
     public User createUser(User user) {
         return complete(submit(req("POST", cnst("/users.json"), JSON, json(
                 Collections.singletonMap("user", user))), handle(User.class, "user")));
