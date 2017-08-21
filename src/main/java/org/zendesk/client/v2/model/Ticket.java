@@ -29,7 +29,6 @@ public class Ticket extends Request implements SearchResultEntity {
     private boolean hasIncidents;
     private Date dueAt;
     private List<String> tags;
-    private List<String> uploads;
     private List<CustomFieldValue> customFields;
     private SatisfactionRating satisfactionRating;
     private List<Long> sharingAgreementIds;
@@ -222,14 +221,6 @@ public class Ticket extends Request implements SearchResultEntity {
         this.tags = tags;
     }
 
-    public List<String> getUploads() {
-        return uploads;
-    }
-
-    public void setUploads(List<String> uploads) {
-        this.uploads = uploads;
-    }
-
     @JsonProperty("ticket_form_id")
     public Long getTicketFormId() {
         return ticketFormId;
@@ -271,7 +262,6 @@ public class Ticket extends Request implements SearchResultEntity {
         sb.append(", hasIncidents=").append(hasIncidents);
         sb.append(", dueAt=").append(dueAt);
         sb.append(", tags=").append(tags);
-        sb.append(", uploads=").append(uploads);
         sb.append(", via=").append(via);
         sb.append(", customFields=").append(customFields);
         sb.append(", satisfactionRating=").append(satisfactionRating);
